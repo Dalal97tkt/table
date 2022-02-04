@@ -16,7 +16,7 @@ int main()
   //strcpy(command, "./att1");
   //system(comman);
   FILE *fp;
-  int status;
+  int status, counter_2=0,counter_1=0;
   char path[1035];
 
   fp = popen("./att1", "r");
@@ -29,7 +29,16 @@ int main()
   while (fgets(path, sizeof(path), fp) != NULL) {
     printf("%s", path);
   }
-  x=x+atoi(path);
+  if(atoi(path)==2)
+  {
+   counter_2++;
+  }
+  elif(atoi(path)==1)
+  {
+   counter_1++;
+  }
  }
- printf("x=%d\n",x);
+ printf("       T1\n");
+ printf("proba >255|  %d\n",counter_1);
+ printf("proba >277|  %d\n",cpunter_2);
 }
